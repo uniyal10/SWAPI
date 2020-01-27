@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{Component} from 'react';
+import axios from 'axios'
+import Character from './characters'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends Component {
+  state={
+  	characters:[]
+  }
+  componentDidMount(){
+  	axios.get("https://swapi.co/api/people/?format=json")
+  	 .then(res=>
+          this.setState({characters:res.data.results})
+          
+  	 	)
+  }
+  render(){
+
+return(
+	    <table className="striped">
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Height</th>
+              <th>Homeworld</th>
+              <th>Birth Year</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <Character  characters={this.state.characters}/>
+        </tbody>
+      </table>
+   
+
+	);
+}
 }
 
 export default App;
