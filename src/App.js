@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import axios from 'axios'
 import Character from './characters'
+import Header from './header'
 
 
 
@@ -18,6 +19,10 @@ class App extends Component {
   render(){
 
 return(
+<div>
+    <Header characters={this.state.character}/>
+
+	<div>
 	    <table className="striped">
         <thead>
           <tr>
@@ -34,7 +39,9 @@ return(
         </tbody>
       </table>
    
+    </div>
 
+ </div>   
 	);
 }
 }

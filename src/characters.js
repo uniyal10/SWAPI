@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom'
 
 
 const Character=({characters})=>{
@@ -6,7 +7,7 @@ const Character=({characters})=>{
 	return(
 	characters.map(c=>{
 		return(
-         <tr>
+         <tr >
             <td>{c.name}</td>
             <td>{c.gender}</td>
             <td>{c.heigh}t</td>
