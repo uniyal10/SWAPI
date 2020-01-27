@@ -3,6 +3,10 @@ import axios from 'axios'
 import Character from './characters'
 import Header from './header'
 
+import Footer from './footer'
+import {BrowserRouter as Router,Link} from 'react-router-dom'
+import Route from 'react-router-dom'
+
 
 
 class App extends Component {
@@ -19,6 +23,7 @@ class App extends Component {
   render(){
 
 return(
+<Router>
 <div>
     <Header characters={this.state.character}/>
 
@@ -41,7 +46,10 @@ return(
    
     </div>
 
+    <Footer />
+
  </div>   
+ </Router>
 	);
 }
 }
