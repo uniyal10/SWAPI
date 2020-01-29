@@ -1,8 +1,9 @@
-import React from 'react'
+import React,{Component} from 'react'
 import Character from './characters'
 
 
-const Table=()=>{
+class Table extends Component{
+	render(){
 	return(
          <div>
 	    <table className="striped">
@@ -17,13 +18,14 @@ const Table=()=>{
         </thead>
 
         <tbody>
-          <Character  characters={this.props.characters}/>
+          <Character characters={this.props.characters} />
         </tbody>
       </table>
    
     </div>
          
 		);
+}
 }
 
 export default Table;

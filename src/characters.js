@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 
 const Character=({characters})=>{
-	console.log(characters)
+	console.log(characters);
 	return(
 	characters.map(c=>{
 		return(
